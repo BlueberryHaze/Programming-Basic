@@ -1,0 +1,69 @@
+using System;
+
+namespace New_House
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string flower = Console.ReadLine();
+            double number = double.Parse(Console.ReadLine());
+            double budget = double.Parse(Console.ReadLine());
+            double price = 0.00;
+            
+            if (flower == "Roses")
+            {
+                price = number * 5;
+            }
+            else if (flower == "Dahlias")
+            {
+                price = number * 3.80;
+            }
+            else if (flower == "Tulips")
+            {
+                price = number * 2.80;
+            }
+            else if (flower == "Narcissus")
+            {
+                price = number * 3;
+            }
+            else if (flower == "Gladiolus")
+            {
+                price = number * 2.50;
+            }
+
+            if (number > 80 && flower == "Roses")
+            {
+                price = price - price * 0.10;
+            }
+            else if (number > 90 && flower == "Dahlias")
+            {
+                price = price - price * 0.15;
+            }
+            else if (number > 80 && flower == "Tulips")
+            {
+                price = price - price * 0.15;
+            }
+            else if (number < 120 && flower == "Narcissus")
+            {
+                price = price + price * 0.15;
+            }
+            else if (number < 120 && flower == "Gladiolus")
+            {
+                price = price + price * 0.20;
+            }
+
+            if (budget >= price)
+            {
+                double left = budget - price;
+                Console.WriteLine("Hey, you have a great garden with {0} {1} and {2:f2} leva left.", number, flower, left);
+            }
+            else 
+            {
+                double need = price - budget;
+                Console.WriteLine("Not enough money, you need {0:f2} leva more.", need);
+            }
+        }
+
+    }
+}
