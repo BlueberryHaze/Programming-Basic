@@ -1,0 +1,29 @@
+using System;
+
+namespace Cinema
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string projectionType = Console.ReadLine().ToLower();
+            int rN = int.Parse(Console.ReadLine());
+            int cN = int.Parse(Console.ReadLine());
+            double sum = 0;
+            if (projectionType == "premiere")
+            {
+                sum = (rN * cN) * 12.00;
+            }
+            else if  (projectionType == "normal")
+                {
+                    sum = (rN * cN) * 7.50;
+                }
+            else if (projectionType == "discount")
+            {
+                sum = (rN * cN) * 5.00;
+            }
+
+            Console.WriteLine("{0:f2} leva", sum );
+        }
+    }
+}
