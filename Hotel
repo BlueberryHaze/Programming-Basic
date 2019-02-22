@@ -1,0 +1,107 @@
+using System;
+
+namespace Hotel
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int days = int.Parse(Console.ReadLine());
+            string typeRoom = Console.ReadLine().ToLower();
+            string rating = Console.ReadLine().ToLower();
+            double night = days - 1;
+            double price = 0;
+
+            if (typeRoom == "room for one person")
+            {
+                if (rating == "positive")
+                {
+                     price = (night * 18.00) * 0.25;
+                }
+                else if (rating == "negative")
+                {
+                     price = (night * 18) * 0.10;
+                }
+            }
+            else if (typeRoom == "apartment")
+            {
+                if (days < 10)
+                {
+                    if (rating == "positive")
+                    {
+                         price = ((night * 25.00) * 0.30) * 0.25;
+                    }
+
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 25.00) * 0.30) * 0.10;
+                    }
+                }
+                else if (days > 10 && days < 15)
+                {
+                    if (rating == "positive")
+                    {
+                         price = ((night * 25.00) * 0.35) * 0.25;
+                    }
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 25.00) * 0.35) * 0.10;
+                    }
+
+                }
+                else
+                {
+                    if (rating == "positive")
+                    {
+                         price = ((night * 25.00) * 0.50) * 0.25;
+                    }
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 25.00) * 0.50) * 0.10;
+                    }
+
+
+                }
+            }
+            else if (typeRoom == "president apartment")
+            {
+                if (days < 10)
+                {
+                    if (rating == "positive")
+                    {
+                         price = ((night * 35.00) * 0.10) * 0.25;
+                    }
+
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 35.00) * 0.10) * 0.10;
+                    }
+                }
+                else if (days > 10 && days < 15)
+                {
+                    if (rating == "positive")
+                    {
+                         price = ((night * 35.00) * 0.15) * 0.25;
+                    }
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 35.00) * 0.15) * 0.10;
+                    }
+
+                }
+                else
+                {
+                    if (rating == "positive")
+                    {
+                        price = ((night * 35.00) * 0.20) * 0.25;
+                    }
+                    else if (rating == "negative")
+                    {
+                         price = ((night * 35.00) * 0.20) * 0.10;
+                    }
+                }
+            }
+            Console.WriteLine("{0:F2}",price);
+        }
+    }
+}
