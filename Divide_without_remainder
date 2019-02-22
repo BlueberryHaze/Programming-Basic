@@ -1,0 +1,41 @@
+using System;
+
+namespace Divide_without_remainder
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int p1Counter = 0;
+            int p2Counter = 0;
+            int p3Counter = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                int num = int.Parse(Console.ReadLine());
+
+                if (num % 2 == 0)
+                {
+                    p1Counter++;
+                }
+                if (num % 3 == 0)
+                {
+                    p2Counter++;
+                }
+                if (num % 4 == 0)
+                {
+                    p3Counter++;
+                }
+            }
+            double p1 = (p1Counter * 1.0 / n) * 100;
+            double p2 = (p2Counter * 1.0 / n) * 100;
+            double p3 = (p3Counter * 1.0 / n) * 100;
+
+            Console.WriteLine($"{p1:F2}%");
+            Console.WriteLine($"{p2:F2}%");
+            Console.WriteLine($"{p3:F2}%");
+        }
+    }
+}
