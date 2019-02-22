@@ -1,0 +1,38 @@
+using System;
+
+namespace Toy_Shop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double holiday = double.Parse(Console.ReadLine());
+            int maze = int.Parse(Console.ReadLine());
+            int doll = int.Parse(Console.ReadLine());
+            int bear = int.Parse(Console.ReadLine());
+            int minion = int.Parse(Console.ReadLine());
+            int truck = int.Parse(Console.ReadLine());
+
+            double sum = maze * 2.60 + doll * 3 + bear * 4.10 + minion * 8.20 + truck * 2;
+            int totalToys = maze + doll + bear + minion + truck;
+            double discount = 0.0;
+
+            if (totalToys >= 50)
+            {
+               discount = sum * 0.25;
+            }
+
+            double totalSum = sum - discount;
+            totalSum = totalSum - totalSum * 0.10;
+
+            if (holiday <= totalSum)
+            {
+                Console.WriteLine("Yes! {0:f2} lv left.", totalSum - holiday);
+            }
+            else
+            {
+                Console.WriteLine("Not enough money! {0:F2} lv needed.", Math.Abs(holiday - totalSum));
+            }
+        }
+    }
+}
