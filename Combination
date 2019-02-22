@@ -1,0 +1,36 @@
+using System;
+
+namespace Combination
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int n = int.Parse(Console.ReadLine());
+			int counter = 0;
+
+			for (int firstN = 0; firstN <= n; firstN++)
+			{
+				for (int secondN = 0; secondN <= n; secondN++)
+				{
+					for (int thirtN = 0; thirtN <= n; thirtN++)
+					{
+						for (int fourthN = 0; fourthN <= n; fourthN++)
+						{
+							for (int fifthtN = 0; fifthtN <= n; fifthtN++)
+							{
+								int sum = firstN + secondN + thirtN + fourthN + fifthtN;
+								if (sum == n)
+								{
+									counter++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			Console.WriteLine(counter);
+		}
+	}
+}
