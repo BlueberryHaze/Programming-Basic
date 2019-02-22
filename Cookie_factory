@@ -1,0 +1,56 @@
+using System;
+
+namespace Cookie_factory
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int numOfPartides = int.Parse(Console.ReadLine());
+			string typeComponent = "";
+			bool flour = false;
+			bool eggs = false;
+			bool sugar = false;
+
+			while (true)
+			{
+
+				for (int i = 1; i <= numOfPartides; i++)
+				{
+					for (int component = 1; component < 1000; component++)
+					{
+						typeComponent = Console.ReadLine();
+						if (typeComponent == "flour")
+						{
+							flour = true;
+						}
+						else if (typeComponent == "eggs")
+						{
+							eggs = true;
+
+						}
+						else if (typeComponent == "sugar")
+						{
+							sugar = true;
+						}
+						else if (typeComponent == "Bake!")
+						{
+							if (flour && eggs && sugar)
+							{
+								Console.WriteLine($"Baking batch number {i}...");
+
+								break;
+							}
+							else
+							{
+								Console.WriteLine("The batter should contain flour, eggs and sugar!");
+
+							}
+						}
+					}
+				}
+				break;
+			}
+		}
+	}
+}
