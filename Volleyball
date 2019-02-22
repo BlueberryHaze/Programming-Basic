@@ -1,0 +1,29 @@
+using System;
+
+namespace Volleyball
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string year = Console.ReadLine();
+            double holiday = double.Parse(Console.ReadLine());
+            double homeTime = double.Parse(Console.ReadLine());
+            double weekendInSofia = 48 - homeTime;
+            double gamesInSofia = weekendInSofia * (3.0 / 4);
+            double gameAtHome = homeTime;
+            double gamesInHoliday = holiday * (2.0 / 3);
+            double sumGames = gamesInSofia + gameAtHome + gamesInHoliday;
+
+            if (year == "leap")
+            {
+                sumGames = sumGames + sumGames * 0.15;
+                Console.WriteLine(Math.Floor(sumGames));
+            }
+            else
+            {
+                Console.WriteLine(Math.Floor(sumGames));
+            }
+        }
+    }
+}
