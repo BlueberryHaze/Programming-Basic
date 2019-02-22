@@ -1,0 +1,58 @@
+using System;
+
+namespace Fishing_Boat
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            double fisherMan = double.Parse(Console.ReadLine());
+
+            double totalPrice = 0.00;
+
+            if (season == "Spring")
+            {
+                totalPrice = 3000;
+            }
+            else if (season == "Summer" || season == "Autumn")
+            {
+                totalPrice = 4200;
+            }
+            else if (season == "Winter" )
+            {
+                totalPrice = 2600;
+            }
+            
+            if (fisherMan <= 6)
+            {
+                totalPrice = totalPrice - totalPrice * 0.10;
+            }
+            else if (fisherMan >= 7 && fisherMan <= 11)
+            {
+                totalPrice = totalPrice - totalPrice * 0.15;
+            }
+            else if (fisherMan >= 12)
+            {
+                totalPrice = totalPrice - totalPrice * 0.25;
+            }
+
+            if (fisherMan % 2 == 0 && season != "Autumn")
+            {
+                totalPrice = totalPrice - totalPrice * 0.05;
+            }
+           if (budget >= totalPrice)
+            {
+                double left = budget - totalPrice;
+                Console.WriteLine("Yes! You have {0:f2} leva left.", left);
+            }
+           else
+            {
+                double need = totalPrice - budget;
+                Console.WriteLine("Not enough money! You need {0:f2} leva.", need);
+            }
+
+        }
+    }
+}
