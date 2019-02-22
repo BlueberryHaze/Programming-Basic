@@ -1,0 +1,33 @@
+using System;
+
+namespace Time__15_Minutes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int startHour = int.Parse(Console.ReadLine());
+            int startMin = int.Parse(Console.ReadLine());
+
+            int timeInMin = startHour * 60 + startMin;
+            int plus15Min = timeInMin + 15;
+
+            int finalHoure = plus15Min / 60;
+            int finalMin = plus15Min % 60; 
+
+            if (finalHoure >= 24)
+            {
+                finalHoure -= 24;
+            }
+
+            if (finalMin < 10)
+            {
+                Console.WriteLine("{0}:0{1}", finalHoure, finalMin);
+            }
+            else
+            {
+                Console.WriteLine("{0}:{1}", finalHoure, finalMin);
+            }
+        }
+    }
+}
