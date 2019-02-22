@@ -1,0 +1,44 @@
+using System;
+
+namespace Area_of_Figures
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string figureType = Console.ReadLine();
+            double area = 0.0;
+            switch (figureType)
+            {
+                case "square":
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        area = a * a;
+                        break;
+                    }
+                case "rectangle":
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double b = double.Parse(Console.ReadLine());
+                        area = a * b;
+                        break;
+                    }
+                case "circle":
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        area = Math.PI * (a * a);
+                        break;
+                    }
+                case "triangle":
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double ah = double.Parse(Console.ReadLine());
+                        area = (a * ah) / 2;
+                        break;
+                    }
+
+            }
+            Console.WriteLine("{0:F3}", area);
+        }
+    }
+}
