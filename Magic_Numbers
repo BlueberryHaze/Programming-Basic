@@ -1,0 +1,37 @@
+using System;
+
+namespace Magic_Numbers
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int n = int.Parse(Console.ReadLine());
+
+
+			for (int firstN = 1; firstN <= 9; firstN++)
+			{
+				for (int secondN = 1; secondN <= 9; secondN++)
+				{
+					for (int thirtN = 1; thirtN <= 9; thirtN++)
+					{
+						for (int fourthN = 1; fourthN <= 9; fourthN++)
+						{
+							for (int fifthtN = 1; fifthtN <= 9; fifthtN++)
+							{
+								for (int sixthN = 1; sixthN <= 9; sixthN++)
+								{
+									int product = firstN * secondN * thirtN * fourthN * fifthtN * sixthN;
+									if (product == n)
+									{
+										Console.Write($"{firstN}{secondN}{thirtN}{fourthN}{fifthtN}{sixthN} ");
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
