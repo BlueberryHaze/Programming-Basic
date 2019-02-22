@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AREA
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string aAsText = Console.ReadLine();
+			string bAsText = Console.ReadLine();
+
+			int a = int.Parse(aAsText);
+			int b = int.Parse(bAsText);
+
+			int c = int.Parse(Console.ReadLine());
+
+			int volume = a * b * c;
+			Console.WriteLine("Volume = " + volume);
+		}
+	}
+}
