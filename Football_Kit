@@ -1,0 +1,31 @@
+using System;
+
+namespace Football_Kit
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double unit = double.Parse(Console.ReadLine());
+			double sumToWin = double.Parse(Console.ReadLine());
+
+			double shorts = unit * 0.75;
+			double socks = shorts * 0.2;
+			double shoes = (unit + shorts) * 2;
+			double totalSum = unit + shorts + socks + shoes;
+			double discount = totalSum - (totalSum * 0.15);
+			double need = Math.Abs(discount - sumToWin);
+
+			if (discount >= sumToWin)
+			{
+				Console.WriteLine($"Yes, he will earn the world-cup replica ball!");
+				Console.WriteLine($"His sum is {discount:f2} lv.");
+			}
+			else
+			{
+				Console.WriteLine($"No, he will not earn the world-cup replica ball.");
+				Console.WriteLine($"He needs {need:f2} lv. more.");
+			}
+		}
+	}
+}
