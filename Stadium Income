@@ -1,0 +1,21 @@
+using System;
+
+namespace Stadium
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double sectors = double.Parse(Console.ReadLine());
+			double sumPeople = double.Parse(Console.ReadLine());
+			double ticketPrice = double.Parse(Console.ReadLine());
+			
+			double income = sumPeople * ticketPrice;
+			double oneSector = income / sectors ;
+			double charity = (income - (oneSector * 0.75)) / 8;
+
+			Console.WriteLine($"Total income - {income:f2} BGN");
+			Console.WriteLine($"Money for charity - {charity:f2} BGN");
+		}
+	}
+}
