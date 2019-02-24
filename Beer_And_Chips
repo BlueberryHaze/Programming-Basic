@@ -1,0 +1,30 @@
+using System;
+
+namespace Beer_And_Chips
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string name = Console.ReadLine();
+			double budget = double.Parse(Console.ReadLine());
+			int botels = int.Parse(Console.ReadLine());
+			int chips = int.Parse(Console.ReadLine());
+
+			double priceBeer = botels * 1.20;
+
+			double priceChips =priceBeer * 0.45;
+			double allChips = Math.Ceiling(chips * priceChips);
+			double need = priceBeer + allChips;
+			double left = Math.Abs(budget - need);
+			if (need <= budget)
+			{
+				Console.WriteLine($"{name} bought a snack and has {left:f2} leva left.");
+			}
+			else
+			{
+				Console.WriteLine($"{name} needs {left:f2} more leva!");
+			}
+		}
+	}
+}
