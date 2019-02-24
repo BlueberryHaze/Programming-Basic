@@ -1,0 +1,41 @@
+using System;
+
+namespace Ticket_Combination
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int combinationNuber = int.Parse(Console.ReadLine());
+			int countCombination = 0;
+
+			for (char stadium = 'B'; stadium <= 'L'; stadium++)
+			{
+				if (stadium % 2 != 0)
+				{
+					continue;
+				}
+				for (char sector = 'f'; sector >= 'a'; sector--)
+				{
+					for (char entrance = 'A'; entrance <= 'C'; entrance++)
+					{
+						for (int row = 1; row <= 10; row++)
+						{
+							for (int seat = 10; seat >= 1; seat--)
+							{
+								countCombination++;
+
+								if (countCombination == combinationNuber)
+								{
+									Console.WriteLine($"Ticket combination: {stadium}{sector}{entrance}{row}{seat}");
+									int price = stadium + sector + entrance + row + seat;
+									Console.WriteLine($"Prize: {price} lv.");
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
