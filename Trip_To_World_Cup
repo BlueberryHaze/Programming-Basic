@@ -1,0 +1,26 @@
+using System;
+
+namespace Trip_To_World_Cup
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double ticketDepart = double.Parse(Console.ReadLine());
+			double ticketArive = double.Parse(Console.ReadLine());
+			double ticketGame = double.Parse(Console.ReadLine());
+			int games = int.Parse(Console.ReadLine());
+			int discount = int.Parse(Console.ReadLine());
+
+			double totalTicket = 6 * (ticketDepart + ticketArive);
+			double afterDiscount = totalTicket - ((totalTicket*discount) / 100);
+			double totalSumTickets = 6 * games * ticketGame;
+			double totalSum = afterDiscount + totalSumTickets;
+			double sumPerOne = totalSum / 6;
+
+			Console.WriteLine($"Total sum: {totalSum:f2} lv.");
+			Console.WriteLine($"Each friend has to pay {sumPerOne:f2} lv.");
+
+		}
+	}
+}
