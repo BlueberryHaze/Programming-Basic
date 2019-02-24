@@ -1,0 +1,122 @@
+using System;
+
+namespace Football_Souvenirs
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string country = Console.ReadLine();
+			string item = Console.ReadLine();
+			int count = int.Parse(Console.ReadLine());
+
+			double pricePerItem = 0;
+			
+
+			bool isValidCountry = true;
+			bool isValidItem = true;
+
+
+			switch (country)
+			{
+				case "Argentina":
+					switch (item)
+					{
+						case "flags":
+							pricePerItem = 3.25;
+							break;
+						case "caps":
+							pricePerItem = 7.20;
+							break;
+						case "posters":
+							pricePerItem = 5.1;
+							break;
+						case "stickers":
+							pricePerItem = 1.25;
+							break;
+						default:
+							isValidItem = false;
+							break;
+					}
+					break;
+				case "Brazil":
+					switch (item)
+					{
+						case "flags":
+							pricePerItem = 4.20;
+							break;
+						case "caps":
+							pricePerItem = 8.50;
+							break;
+						case "posters":
+							pricePerItem = 5.35;
+							break;
+						case "stickers":
+							pricePerItem = 1.20;
+							break;
+						default:
+							isValidItem = false;
+							break;
+					}
+					break;
+				case "Croatia":
+					switch (item)
+					{
+						case "flags":
+							pricePerItem = 2.75;
+							break;
+						case "caps":
+							pricePerItem = 6.90;
+							break;
+						case "posters":
+							pricePerItem = 4.95;
+							break;
+						case "stickers":
+							pricePerItem = 1.10;
+							break;
+						default:
+							isValidItem = false;
+							break;
+					}
+					break;
+				case "Denmark":
+					switch (item)
+					{
+						case "flags":
+							pricePerItem = 3.10;
+							break;
+						case "caps":
+							pricePerItem = 6.50;
+							break;
+						case "posters":
+							pricePerItem = 4.80;
+							break;
+						case "stickers":
+							pricePerItem = 0.90;
+							break;
+						default:
+							isValidItem = false;
+							break;
+					}
+					break;
+				default:
+					isValidCountry = false;
+					break;
+					
+			}
+			double totalPrice = count * pricePerItem;
+			if (isValidCountry == false)
+			{
+				Console.WriteLine("Invalid country!");
+			}
+			else if (isValidItem == false)
+			{
+				Console.WriteLine("Invalid stock!");
+			}
+			else
+			{
+				Console.WriteLine($"Pepi bought {count} {item} of {country} for {totalPrice:f2} lv.");
+			}
+		}
+	}
+}
