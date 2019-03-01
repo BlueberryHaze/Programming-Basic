@@ -1,0 +1,72 @@
+using System;
+
+namespace Fishing
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int fish = int.Parse(Console.ReadLine());
+			int count = 0;
+			int every3 = 0;
+			int asciiSum = 0;
+			decimal sumFish = 0;
+			decimal profit = 0;
+
+
+			for (int i = 1; i <= fish; i++)
+			{
+
+				string fishname = Console.ReadLine();
+				if (fishname == "Stop")
+				{
+					break;
+				}
+				else
+				{
+					double fishkg = double.Parse(Console.ReadLine());
+									   
+					count++;
+					every3++;
+
+					for (int h = 0; h < fishname.Length; h++)
+					{
+						asciiSum += fishname[h];
+
+					}
+					sumFish = (decimal)asciiSum / (decimal)fishkg;
+
+					if (every3 == 3)
+					{
+						profit += sumFish;
+						every3 = 0;
+					}
+					else
+					{
+						profit -= sumFish;
+					}
+
+
+					asciiSum = 0;
+
+					if (count == fish)
+					{
+						Console.WriteLine("Lyubo fulfilled the quota!");
+						break;
+					}
+				}
+
+
+			}
+
+
+			if (profit >= 0)
+				Console.WriteLine($"Lyubo's profit from {count} fishes is {profit:f2} leva.");
+			else 
+			{
+				profit = Math.Abs(profit);
+				Console.WriteLine($"Lyubo lost {profit:f2} leva today.");
+			}
+		}
+	}
+}
