@@ -1,0 +1,56 @@
+using System;
+
+namespace Sum_of_Two_Numbers
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int rowOne = int.Parse(Console.ReadLine());
+			int endRow = int.Parse(Console.ReadLine());
+			int magicNumber = int.Parse(Console.ReadLine());
+			int counter = 0;
+			bool combien = false;
+			bool end = false;
+
+			for (int i = rowOne; i <= endRow; i++)
+			{
+				for (int j = rowOne; j <= endRow; j++)
+				{
+
+					counter++;
+					int sum = i + j;
+					if (sum == magicNumber)
+					{
+						combien = true;
+
+						if (combien)
+						{
+							if (end == true)
+							{
+
+								break;
+								
+
+							}
+							else
+							{
+								int n = counter;
+								int n1 = i;
+								int n2 = j;
+								Console.WriteLine($"Combination N:{n} ({n1} + {n2} = {magicNumber})");
+								end = true;
+							}
+						}
+					}
+				}
+			}
+			if (combien == false)
+			{
+				Console.WriteLine($"{counter} combinations - neither equals {magicNumber}");
+			}
+		}
+		
+	}
+}
+
