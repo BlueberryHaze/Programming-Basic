@@ -1,0 +1,34 @@
+using System;
+
+namespace Bus
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int startPasanger = int.Parse(Console.ReadLine());
+			int busStop = int.Parse(Console.ReadLine());
+			int totalPasanger = 0;
+			int left = 0;
+
+			for (int i = 1; i <= busStop; i++)
+			{
+				int arrive = int.Parse(Console.ReadLine());
+				int income = int.Parse(Console.ReadLine());
+
+				if (i % 2 == 1)
+				{
+					totalPasanger += income + 2 - arrive;
+				}
+				if (i % 2 == 0)
+				{
+					totalPasanger += income - arrive - 2;
+				}
+			}
+
+			left = startPasanger + totalPasanger;
+			Console.WriteLine($"The final number of passengers is : {left}");
+
+		}
+	}
+}
