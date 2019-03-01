@@ -13,7 +13,7 @@ namespace FruitShop
 
             if (day == "monday" || day == "tuesday" || day == "wednesday" || day == "thursday" || day == "friday")
             {
-                if (fruit == "banana ")
+                if (fruit == "banana")
                 {
                     price = 2.50;
                 }
@@ -44,7 +44,7 @@ namespace FruitShop
             }
             else if (day == "saturday" || day == "sunday")
             {
-                if (fruit == "banana ")
+                if (fruit == "banana")
                 {
                     price = 2.70;
                 }
