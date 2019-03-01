@@ -1,0 +1,35 @@
+using System;
+
+namespace Matrix
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int a = int.Parse(Console.ReadLine());
+			int b = int.Parse(Console.ReadLine());
+			int c = int.Parse(Console.ReadLine());
+			int d = int.Parse(Console.ReadLine());
+
+			for (int firstRowFN = a; firstRowFN <= b; firstRowFN++)
+			{
+				for (int firstRowSN = a; firstRowSN <= b; firstRowSN++)
+				{
+					for (int secondRowFN = c; secondRowFN <= d; secondRowFN++)
+					{
+						for (int secondRowSN = c; secondRowSN <= d; secondRowSN++)
+						{
+							if (((firstRowFN + secondRowSN) == (firstRowSN + secondRowFN  ) &&
+									(firstRowFN != firstRowSN) && (secondRowFN != secondRowSN)))
+							{
+								Console.WriteLine($"{firstRowFN}{firstRowSN}");
+								Console.WriteLine($"{secondRowFN}{secondRowSN}");
+								Console.WriteLine();
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
