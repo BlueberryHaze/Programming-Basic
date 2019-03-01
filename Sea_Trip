@@ -1,0 +1,27 @@
+using System;
+
+namespace Sea_Trip
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double food = double.Parse(Console.ReadLine());
+			double suvenir = double.Parse(Console.ReadLine());
+			double hotel = double.Parse(Console.ReadLine());
+
+			double neededGas = 4.2 * 7;
+			double moneyForGas = neededGas * 1.85;
+			double spend = 3 * food + 3 * suvenir;
+
+			double dayOne = hotel * 0.9;
+			double dayTwo = hotel * 0.85;
+			double dayTree = hotel * 0.8;
+
+			double moneyNeed = moneyForGas + spend + dayOne + dayTwo + dayTree;
+
+			Console.WriteLine($"Money needed: {moneyNeed:f2}");
+
+		}
+	}
+}
