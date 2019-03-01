@@ -1,32 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SquareArea
+namespace Square_Area
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			double a = 1;
-			int b = 0;
 
-			double sum = a + b;
-			Console.WriteLine($"a + b = {sum}");
-
-			double subtractionResult = a - b;
-			Console.WriteLine($"a - b = {subtractionResult}");
-
-			double product = a * b;
-			Console.WriteLine($"a * b = {product}");
-
-			double division = a / b;
-			Console.WriteLine($"a / b = {division}");
-
-			double remainder = a % b;
-			Console.WriteLine($"a % b = {remainder}");
+			int side = int.Parse(Console.ReadLine());
+			int area = side * side;
+			Console.WriteLine(area);
 		}
 	}
 }
+
