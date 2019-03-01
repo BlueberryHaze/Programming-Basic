@@ -1,0 +1,60 @@
+using System;
+
+namespace The_song_of_the_wheels
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int n = int.Parse(Console.ReadLine());
+			int control = 0;
+			int counter = 0;
+
+			int a1 = 0;
+			int b1 = 0;
+			int c1 = 0;
+			int d1 = 0;
+
+
+			for (int a = 1; a <= 9; a++)
+			{
+				for (int b = 1; b <= 9; b++)
+				{
+					for (int c = 1; c <= 9; c++)
+					{
+						for (int d = 1; d < 9; d++)
+						{
+
+							if (a < b && c > d)
+							{
+								control = (a * b) + (c * d);
+
+								if (control == n)
+								{
+									Console.Write($" {a}{b}{c}{d}");
+									counter++;
+									
+									if (counter == 4)
+									{
+										a1 = a;
+										b1 = b;
+										c1 = c;
+										d1 = d;
+
+									}
+
+								}
+							}
+						}
+					}
+				}
+			}
+			if (counter > 0)
+				Console.WriteLine();
+			if (counter > 3)
+				Console.WriteLine($"Password: {a1}{b1}{c1}{d1}");
+			else
+				Console.WriteLine("No!");
+		}
+	}
+}
