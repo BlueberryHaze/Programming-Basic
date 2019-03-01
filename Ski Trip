@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace skiTrip
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int days = int.Parse(Console.ReadLine());
+            string roomType = Console.ReadLine();
+            string grade = Console.ReadLine();
+            int nights = days - 1;
+            double discount = 0.0;
+            double totalSum = 0.0;
+ 
+            if (nights < 10)
+            {
+                if (roomType == "room for one person")
+                {
+                    totalSum = nights * 18.00;
+                }
+                else if (roomType == "apartment")
+                {
+                    discount = 0.3;
+                    totalSum = nights * 25;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                else if (roomType == "president apartment")
+                {
+                    discount = 0.1;
+                    totalSum = nights * 35;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                if (grade == "positive")
+                {
+                    totalSum = totalSum + (0.25 * totalSum);
+                }
+                else if (grade == "negative")
+                {
+                    totalSum = totalSum - (0.1 * totalSum);
+                }
+                Console.WriteLine("{0:f2}", totalSum);
+            }
+            else if (nights >= 10 && nights <= 15)
+            {
+                if (roomType == "room for one person")
+                {
+                    totalSum = nights * 18.00;
+                }
+                else if (roomType == "apartment")
+                {
+                    discount = 0.35;
+                    totalSum = nights * 25;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                else if (roomType == "president apartment")
+                {
+                    discount = 0.15;
+                    totalSum = nights * 35;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                if (grade == "positive")
+                {
+                    totalSum = totalSum + (0.25 * totalSum);
+                }
+                else if (grade == "negative")
+                {
+                    totalSum = totalSum - (0.1 * totalSum);
+                }
+                Console.WriteLine("{0:f2}", totalSum);
+            }
+            else if (nights>15)
+            {
+                if (roomType == "room for one person")
+                {
+                    totalSum = nights * 18.00;
+                }
+                else if (roomType == "apartment")
+                {
+                    discount = 0.5;
+                    totalSum = nights * 25;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                else if (roomType == "president apartment")
+                {
+                    discount = 0.2;
+                    totalSum = nights * 35;
+                    totalSum = totalSum - (totalSum * discount);
+                }
+                if (grade == "positive")
+                {
+                    totalSum = totalSum + (0.25 * totalSum);
+                }
+                else if (grade == "negative")
+                {
+                    totalSum = totalSum - (0.1 * totalSum);
+                }
+                Console.WriteLine("{0:f2}", totalSum);
+            }
+        }
+    }
+}
