@@ -1,0 +1,36 @@
+using System;
+
+namespace Train_The_Trainers
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int judges = int.Parse(Console.ReadLine());
+			string presName = string.Empty;
+			int sumGradeCounter = 0;
+			double finalAssessment = 0;
+
+			while (presName != "Finish")
+			{
+				presName = Console.ReadLine();
+				double sumGrade = 0;
+
+				for (int i = 1; i <= judges; i++)
+				{
+					sumGrade += double.Parse(Console.ReadLine());
+					sumGradeCounter++;
+				}
+				double averageGrade = sumGrade / judges;
+				Console.WriteLine($"{presName} - {averageGrade:f2}.");
+
+				finalAssessment += averageGrade;
+			}
+			if (presName == "Finish")
+			{
+				finalAssessment = finalAssessment / sumGradeCounter;
+				Console.WriteLine($"Student's final assessment is {finalAssessment:f2}.");
+			}
+		}
+	}
+}
