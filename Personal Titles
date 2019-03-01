@@ -1,0 +1,36 @@
+using System;
+
+namespace Gendar
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double age = double.Parse(Console.ReadLine());
+            char gendar = char.Parse( Console.ReadLine());
+
+            if (gendar == 'f')
+            {
+                if (age < 16)
+                {
+                    Console.WriteLine("Miss");
+                }
+                else
+                {
+                    Console.WriteLine("Ms.");
+                }
+            }
+            else if (gendar == 'm')
+            {
+                if (age < 16)
+                {
+                    Console.WriteLine("Master");
+                }
+                else
+                {
+                    Console.WriteLine("Mr.");
+                }
+            }
+        }
+    }
+}
