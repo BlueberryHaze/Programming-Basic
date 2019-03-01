@@ -1,0 +1,30 @@
+using System;
+
+namespace Unique_PIN_Codes
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int n1 = int.Parse(Console.ReadLine());
+			int n2 = int.Parse(Console.ReadLine());
+			int n3 = int.Parse(Console.ReadLine());
+
+			for (int a = 2; a <= n1; a += 2)
+			{
+				for (int b = 2; b <= n2; b++)
+				{
+					for (int c = 2; c <= n3; c += 2)
+					{
+
+						if (b == 2 || b == 3 || b == 5 || b == 7)
+						{
+							Console.WriteLine($"{a} {b} {c}");
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
