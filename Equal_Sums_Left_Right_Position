@@ -1,0 +1,60 @@
+using System;
+
+namespace Equal_Sums_Left_Right_Position
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int number1 = int.Parse(Console.ReadLine());
+			int number2 = int.Parse(Console.ReadLine());
+
+			for (int i = number1; i <= number2; i++)
+			{
+				string stringNumber = i.ToString();
+				int sumLeft = 0;
+				int sumRight = 0;
+				int middleNumber = 0;
+
+				for (int k = 0; k < 5; k++)
+				{
+					//char charNumber = stringNumber[k];
+					int number = int.Parse(stringNumber[k].ToString());
+					if (k < 2)
+					{
+						sumLeft += number;
+					}
+					if (k > 2)
+					{
+						sumRight += number;
+					}
+					else
+					{
+						middleNumber = number;
+					}
+				}
+				if (sumLeft == sumRight)
+				{
+					Console.Write(i + " ");
+				}
+				else if (sumLeft < sumRight)
+				{
+					sumLeft += middleNumber;
+					if (sumLeft == sumRight)
+					{
+						Console.Write(i + " ");
+					}
+				}
+				else
+				{
+					sumRight += middleNumber;
+					if (sumLeft == sumRight)
+					{
+						Console.Write(i + " ");
+					}
+				}
+
+			}
+		}
+	}
+}
