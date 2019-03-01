@@ -1,0 +1,44 @@
+using System;
+
+namespace HappyCat_Parking
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int days = int.Parse(Console.ReadLine());
+			int hours = int.Parse(Console.ReadLine());
+			int counterDay = 0;
+			double sumDay = 0.0;
+			double price = 1;
+			double total = 0;
+
+			for (int i = 1; i <= days; i++)
+			{
+				counterDay++;
+				for (int j = 1; j <= hours; j++)
+				{
+
+					if (i % 2 == 0 && j % 2 == 1)
+					{
+						price = 2.50;
+					}
+					if (i % 2 == 1 && j % 2 == 0)
+					{
+						price = 1.25;
+					}
+
+					sumDay += price;
+					price = 1;
+
+				}
+				total += sumDay;
+				Console.WriteLine($"Day: {counterDay} - {sumDay:f2} leva");
+				sumDay = 0;
+
+			}
+
+			Console.WriteLine($"Total: {total:f2} leva");
+		}
+	}
+}
