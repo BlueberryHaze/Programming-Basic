@@ -1,0 +1,50 @@
+using System;
+
+namespace Prime_Pairs
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			int n1 = int.Parse(Console.ReadLine());
+			int n3 = int.Parse(Console.ReadLine());
+			int n2 = int.Parse(Console.ReadLine());
+			int n4 = int.Parse(Console.ReadLine());
+
+			
+			for (int a = n1; a <= n1 + n2; a++)
+			{
+				for (int b = n3; b <= n3 + n4; b++)
+				{
+					bool firstCheck = true;
+					bool secondCheck = true;
+					for (int n = 2; n <= Math.Sqrt(a); n++)
+					{
+
+						if (a % n == 0)
+						{
+							firstCheck = false;
+							break;
+						}
+					}
+
+					
+					for (int m = 2; m <= Math.Sqrt(b); m++)
+					{
+						if (b % m == 0)
+						{
+							secondCheck = false;
+							break;
+						}
+					}
+					if (firstCheck && secondCheck)
+					{
+						Console.WriteLine($"{a}{b}");
+					}
+				}
+			}
+		}
+	}
+}
+
