@@ -1,0 +1,28 @@
+using System;
+
+namespace Challenge_the_Wedding
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int mens = int.Parse(Console.ReadLine());
+			int women = int.Parse(Console.ReadLine());
+			int tables = int.Parse(Console.ReadLine());
+			int counter = 0;
+
+			for (int a = 1; a <= mens; a++)
+			{
+				for (int b = 1; b <= women; b++)
+				{
+					
+					if (counter < tables)
+					{
+						Console.Write($"({a} <-> {b}) ");
+						counter++;
+					}
+				}
+			}
+		}
+	}
+}
