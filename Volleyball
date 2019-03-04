@@ -7,23 +7,24 @@ namespace Volleyball
         static void Main(string[] args)
         {
             string year = Console.ReadLine();
-            double holiday = double.Parse(Console.ReadLine());
-            double homeTime = double.Parse(Console.ReadLine());
-            double weekendInSofia = 48 - homeTime;
-            double gamesInSofia = weekendInSofia * (3.0 / 4);
-            double gameAtHome = homeTime;
-            double gamesInHoliday = holiday * (2.0 / 3);
-            double sumGames = gamesInSofia + gameAtHome + gamesInHoliday;
+			double holiday = double.Parse(Console.ReadLine());
+			double homeWeekends = double.Parse(Console.ReadLine());
 
-            if (year == "leap")
-            {
-                sumGames = sumGames + sumGames * 0.15;
-                Console.WriteLine(Math.Floor(sumGames));
-            }
-            else
-            {
-                Console.WriteLine(Math.Floor(sumGames));
-            }
-        }
-    }
+			double yearWeekends = 48 - homeWeekends;
+			double weekendGame = yearWeekends * (3.0 / 4);
+			double sofiaWeekend = holiday * (2.0 / 3);
+			double totalGame = weekendGame + homeWeekends + sofiaWeekend;
+
+			if (year == "leap")
+			{
+				totalGame = totalGame + (totalGame * 0.15);
+				Console.WriteLine(Math.Floor(totalGame));
+			}
+			else
+			{
+				Console.WriteLine(Math.Floor(totalGame));
+			}
+
+		}
+	}
 }
