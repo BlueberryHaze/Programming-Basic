@@ -1,0 +1,28 @@
+using System;
+
+namespace Charity_Campaign
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int days = int.Parse(Console.ReadLine());
+			int people = int.Parse(Console.ReadLine());
+			int cake = int.Parse(Console.ReadLine());
+			int waffles = int.Parse(Console.ReadLine());
+			int pancake = int.Parse(Console.ReadLine());
+
+			double priceCake = cake * 45;
+			double priceWaffles = waffles * 5.8;
+			double pricePancake = pancake * 3.2;
+			double priceDay = (priceCake + pricePancake + priceWaffles) * people;
+			double savedMoney = priceDay * days;
+			double spend = savedMoney / 8;
+			savedMoney = savedMoney - spend;
+
+			
+			Console.WriteLine($"{savedMoney:f2}");
+
+		}
+	}
+}
