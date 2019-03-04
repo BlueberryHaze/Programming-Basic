@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rectangleArea
+namespace RectangleArea
 {
 	class Program
 	{
@@ -16,10 +16,13 @@ namespace rectangleArea
 			double y2 = double.Parse(Console.ReadLine());
 
 			double lenght = Math.Abs(x1 - x2);
-			double width = Math.Abs(y2 - y2);
+			double width = Math.Abs(y1 - y2);
 
-			double area = lenght + width;
-			double rectangle = lenght * 2 + width * 2;
+			double area = lenght * width;
+			double rectangle = (lenght + width) * 2;
+
+			Console.WriteLine($"{area:f2}");
+			Console.WriteLine($"{rectangle:f2}");
 		}
 	}
 }
