@@ -1,0 +1,22 @@
+using System;
+
+namespace Dance_Hall
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double L = double.Parse(Console.ReadLine());
+			double W = double.Parse(Console.ReadLine());
+			double A = double.Parse(Console.ReadLine());
+
+			double sizeHall = (L * 100) * (W * 100);
+			double sizeWardrobe = (A * 100) * (A * 100);
+			double bench = sizeHall / 10;
+			double freeSpace = sizeHall - sizeWardrobe - bench;
+			double dancer = Math.Floor(freeSpace / 7040);
+
+			Console.WriteLine(dancer);
+		}
+	}
+}
