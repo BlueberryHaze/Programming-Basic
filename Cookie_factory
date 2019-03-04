@@ -38,7 +38,9 @@ namespace Cookie_factory
 							if (flour && eggs && sugar)
 							{
 								Console.WriteLine($"Baking batch number {i}...");
-
+								flour = false;
+								eggs = false;
+								sugar = false;
 								break;
 							}
 							else
