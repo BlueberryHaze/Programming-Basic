@@ -1,0 +1,62 @@
+using System;
+
+namespace Speed_Info
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double income = double.Parse(Console.ReadLine());
+			double averageGrade = double.Parse(Console.ReadLine());
+			double minWage = double.Parse(Console.ReadLine());
+
+			double socialBenefit = 0.0;
+			double scholarshipBenefit = 0.0;
+			bool social = false;
+			bool scholarship = false;
+
+			if (income < minWage && averageGrade > 4.5)
+			{
+				social = true;
+				socialBenefit = Math.Floor(minWage * 0.35);
+			}
+			if (averageGrade >= 5.5)
+			{
+				scholarship = true;
+				scholarshipBenefit = Math.Floor(averageGrade * 25);
+			}
+			if (social || scholarship)
+			{
+
+				if (social && scholarship)
+				{
+					if (scholarshipBenefit == socialBenefit)
+					{
+						Console.WriteLine($"You get a scholarship for excellent results {scholarshipBenefit} BGN");
+					}
+					else if (scholarshipBenefit > socialBenefit)
+					{
+						Console.WriteLine($"You get a scholarship for excellent results {scholarshipBenefit} BGN");
+					}
+					else
+					{
+						Console.WriteLine($"You get a Social scholarship {socialBenefit} BGN");
+					}
+				}
+
+				else if (scholarship)
+				{
+					Console.WriteLine($"You get a scholarship for excellent results {scholarshipBenefit} BGN");
+				}
+				else
+				{
+					Console.WriteLine($"You get a Social scholarship {socialBenefit} BGN");
+				}
+			}
+			else
+			{
+				Console.WriteLine($"You cannot get a scholarship!");
+			}
+		}
+	}
+}
