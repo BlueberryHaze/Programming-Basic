@@ -2,28 +2,30 @@ using System;
 
 namespace Cinema
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string projectionType = Console.ReadLine().ToLower();
-            int rN = int.Parse(Console.ReadLine());
-            int cN = int.Parse(Console.ReadLine());
-            double sum = 0;
-            if (projectionType == "premiere")
-            {
-                sum = (rN * cN) * 12.00;
-            }
-            else if  (projectionType == "normal")
-                {
-                    sum = (rN * cN) * 7.50;
-                }
-            else if (projectionType == "discount")
-            {
-                sum = (rN * cN) * 5.00;
-            }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string type = Console.ReadLine();
+			int row = int.Parse(Console.ReadLine());
+			int columns = int.Parse(Console.ReadLine());
+			double ticket = 0;
 
-            Console.WriteLine("{0:f2} leva", sum );
-        }
-    }
+			switch (type)
+			{
+				case "Premiere":
+					ticket = 12;
+					break;
+						case "Normal":
+					ticket = 7.5;
+					break;
+				case "Discount":
+					ticket = 5;
+					break;
+			}
+			double totalSum = (row * columns) * ticket;
+
+			Console.WriteLine($"{totalSum:f2} leva");
+		}
+	}
 }
