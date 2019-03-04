@@ -1,0 +1,28 @@
+using System;
+
+namespace Choreography
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double steps = double.Parse(Console.ReadLine());
+			double dancers = double.Parse(Console.ReadLine());
+			double days = double.Parse(Console.ReadLine());
+
+			double procentStepsDay = Math.Ceiling(((steps / days) / steps) * 100);
+			double procentStepsPerDancer = procentStepsDay / dancers;
+
+			if(procentStepsDay < 13)
+			{
+				Console.WriteLine($"Yes, they will succeed in that goal! {procentStepsPerDancer:f2}%.");
+			}
+			else
+			{
+				Console.WriteLine($"No, they will not succeed in that goal! Required {procentStepsPerDancer:f2}% steps to be learned per day.");
+			}
+
+
+		}
+	}
+}
