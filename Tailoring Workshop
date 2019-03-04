@@ -1,0 +1,24 @@
+using System;
+
+namespace Tailoring_Workshop
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int tableCount = int.Parse(Console.ReadLine());
+			double lenght = double.Parse(Console.ReadLine());
+			double width = double.Parse(Console.ReadLine());
+
+			double cover = tableCount * (width + 0.6) * (lenght + 0.6);
+			double square = tableCount * (lenght / 2) * (lenght / 2);
+
+			double usd = cover * 7 + square * 9;
+			double bgn = usd * 1.85;
+
+			Console.WriteLine($"{usd:f2} USD");
+			Console.WriteLine($"{bgn:f2} BGN");
+      
+		}
+	}
+}
