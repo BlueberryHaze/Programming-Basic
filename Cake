@@ -17,7 +17,7 @@ namespace Cake
                 int pices = int.Parse(command);
                 counterPices += pices;
 
-                if (counterPices >= sizeCake)
+                if (counterPices > sizeCake)
                 {
                     int neededPices = counterPices - sizeCake;
                     Console.WriteLine($"No more cake left! You need {neededPices} pieces more.");
