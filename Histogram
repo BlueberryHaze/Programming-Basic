@@ -6,53 +6,52 @@ namespace Histogram
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int p1Counter = 0;
-            int p2Counter = 0;
-            int p3Counter = 0;
-            int p4Counter = 0;
-            int p5Counter = 0;
+           	double n = int.Parse(Console.ReadLine());
+			double P1 = 0;
+			double P2 = 0;
+			double P3 = 0;
+			double P4 = 0;
+			double P5 = 0;
+
+			for (int i = 1; i <= n; i++)
+			{
+				int num = int.Parse(Console.ReadLine());
 
 
-            for (int i = 1; i <= n; i++)
-            {
-                int currentNumber = int.Parse(Console.ReadLine());
+				if (1 <= num && num < 200)
+				{
+					P1++;
+				}
+				else if (200 <= num && num <= 399)
+				{
+					P2++;
+				}
+				else if (400 <= num && num <= 599)
+				{
+					P3++;
+				}
+				else if (600 <= num && num <= 799)
+				{
+					P4++;
+				}
+				else
+				{
+					P5++;
+				}
 
-                if (currentNumber >= 1 && currentNumber < 200)
-                {
-                    p1Counter++;
-                }
-                else if (currentNumber >= 200 && currentNumber <= 399)
-                {
-                    p2Counter++;
-                }
-                else if (currentNumber >= 400 && currentNumber <= 599)
-                {
-                    p3Counter++;
-                }
-                else if (currentNumber >= 600 && currentNumber <= 799)
-                {
-                    p4Counter++;
-                }
-                else if (currentNumber >= 800)
-                {
-                    p5Counter++;
-                }
-            }
+			}
 
-            double p1 = (p1Counter * 1.0 / n) * 100;
-            double p2 = (p2Counter * 1.0 / n) * 100;
-            double p3 = (p3Counter * 1.0 / n) * 100;
-            double p4 = (p4Counter * 1.0 / n) * 100;
-            double p5 = (p5Counter * 1.0 / n) * 100;
+			P1 = (P1 / n) * 100;
+			P2 = (P2 / n) * 100;
+			P3 = (P3 / n) * 100;
+			P4 = (P4 / n) * 100;
+			P5 = (P5 / n) * 100;
 
-            Console.WriteLine($"{p1:F2}%");
-            Console.WriteLine($"{p2:F2}%");
-            Console.WriteLine($"{p3:F2}%");
-            Console.WriteLine($"{p4:F2}%");
-            Console.WriteLine($"{p5:F2}%");
-
-
-        }
-    }
+			Console.WriteLine($"{P1:f2}%");
+			Console.WriteLine($"{P2:f2}%");
+			Console.WriteLine($"{P3:f2}%");
+			Console.WriteLine($"{P4:f2}%");
+			Console.WriteLine($"{P5:f2}%");
+		}
+	}
 }
