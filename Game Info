@@ -1,0 +1,35 @@
+using System;
+
+namespace Game_Info
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string team = Console.ReadLine();
+			int playedGame = int.Parse(Console.ReadLine());
+			double totalmin = 0;
+			int addTimes = 0;
+			int penalties = 0;
+
+			for (int i = 1; i <= playedGame; i++)
+			{
+				double duration = double.Parse(Console.ReadLine());
+				totalmin += duration;
+				if (duration > 90 && duration <= 120)
+				{
+					addTimes++;
+				}
+				if (duration > 120)
+				{
+					penalties++;
+				}
+			}
+			double average = totalmin / playedGame;
+			Console.WriteLine($"{team} has played {totalmin} minutes. Average minutes per game: {average:f2}");
+			Console.WriteLine($"Games with penalties: {penalties}");
+			Console.WriteLine($"Games with additional time: {addTimes}");
+
+		}
+	}
+}
