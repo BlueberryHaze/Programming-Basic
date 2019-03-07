@@ -5,54 +5,45 @@ namespace Equal_Sums_Left_Right_Position
 	class Program
 	{
 		static void Main(string[] args)
-		{
-			int number1 = int.Parse(Console.ReadLine());
-			int number2 = int.Parse(Console.ReadLine());
+		{			
+			int num1 = int.Parse(Console.ReadLine());
+			int num2 = int.Parse(Console.ReadLine());
 
-			for (int i = number1; i <= number2; i++)
+			int leftSum = 0;
+			int rightSum = 0;
+
+			for (int i = num1; i <= num2; i++)
 			{
-				string stringNumber = i.ToString();
-				int sumLeft = 0;
-				int sumRight = 0;
-				int middleNumber = 0;
+				int left1 = (i / 10000) % 10;
+				int left2 = (i / 1000) % 10;
+				int middle = (i / 100) % 10;
+				int right1 = (i / 10) % 10;
+				int right2 = i % 10;
 
-				for (int k = 0; k < 5; k++)
-				{
-					//char charNumber = stringNumber[k];
-					int number = int.Parse(stringNumber[k].ToString());
-					if (k < 2)
-					{
-						sumLeft += number;
-					}
-					if (k > 2)
-					{
-						sumRight += number;
-					}
-					else
-					{
-						middleNumber = number;
-					}
-				}
-				if (sumLeft == sumRight)
+				leftSum = left1 + left2;
+				rightSum = right1 + right2;
+
+				if (leftSum == rightSum)
 				{
 					Console.Write(i + " ");
 				}
-				else if (sumLeft < sumRight)
+				else if (leftSum > rightSum)
 				{
-					sumLeft += middleNumber;
-					if (sumLeft == sumRight)
+					rightSum += middle;
+					if (leftSum == rightSum)
 					{
 						Console.Write(i + " ");
 					}
 				}
 				else
 				{
-					sumRight += middleNumber;
-					if (sumLeft == sumRight)
+					leftSum += middle;
+					if (leftSum == rightSum)
 					{
 						Console.Write(i + " ");
 					}
 				}
+
 
 			}
 		}
