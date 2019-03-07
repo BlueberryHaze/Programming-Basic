@@ -1,0 +1,69 @@
+using System;
+
+namespace Game_Statistics
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int min = int.Parse(Console.ReadLine());
+			string player = Console.ReadLine();
+
+			if (min == 0)
+			{
+				Console.WriteLine("Match has just began!");
+			}
+			else if (min > 0 && min < 45)
+			{
+				Console.WriteLine("First half time.");
+				if (min>= 1 && min <= 10)
+				{
+					Console.WriteLine($"{player} missed a penalty.");
+					if (min%2 == 0)
+					{
+						Console.WriteLine($"{player} was injured after the penalty.");
+					}
+				}
+				else if(min >10 && min <= 35)
+				{
+					Console.WriteLine($"{player} received yellow card.");
+					if (min % 2 == 1)
+					{
+						Console.WriteLine($"{player} got another yellow card."
+);
+					}
+				}
+				else if (min> 35 && min < 45)
+				{
+					Console.WriteLine($"{player} SCORED A GOAL !!!");
+				}
+				
+			}
+			else if(min >= 45 && min <= 90)
+			{
+				Console.WriteLine("Second half time.");
+				if (min > 45 && min <= 55)
+				{
+					Console.WriteLine($"{player} got a freekick.");
+					if (min % 2 == 0)
+					{
+						Console.WriteLine($"{player} missed the freekick.");
+					}
+				}
+				else if (min > 55 && min <= 80)
+				{
+					Console.WriteLine($"{player} missed a shot from corner.");
+					if (min % 2 == 1)
+					{
+						Console.WriteLine($"{player} has been changed with another player.");
+					}
+				}
+				else if (min > 80 && min <= 900)
+				{
+					Console.WriteLine($"{player} SCORED A GOAL FROM PENALTY !!!");
+					
+				}
+
+			}
+		}
+	}
+}
