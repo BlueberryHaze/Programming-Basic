@@ -2,51 +2,65 @@ using System;
 
 namespace Hotel_Room
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string month = Console.ReadLine();
-            int days = int.Parse(Console.ReadLine());
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string month = Console.ReadLine();
+			double days = double.Parse(Console.ReadLine());
 
-            double priceStudio = 0.00;
-            double priceFlat = 0.00;
+			double priceStudio = 0.00;
+			double priceFlat = 0.00;
 
-            if (month == "May" || month == "October")
-            {
-                priceStudio = days * 50;
-                priceFlat = days * 65;
-            }
-            else if (month == "June" || month == "September")
-            {
-                priceStudio = days * 75.20;
-                priceFlat = days * 68.70;
-            }
-            else if (month == "July" || month == "August")
-            {
-                priceStudio = days * 76;
-                priceFlat = days * 77;
-            }
+			if (month == "May" || month == "October")
+			{
+				if (days > 7 && days <= 14)
+				{
+					priceStudio = days * 50.0 * 0.95;
+					priceFlat = days * 65.0;
+				}
+				else if (days > 14)
+				{
+					priceStudio = days * 50.0 * 0.70;
+					priceFlat = days * 65.0 * 0.90;
+				}
+				else
+				{
+					priceStudio = days * 50.0;
+					priceFlat = days * 65.0;
+				}
+			}
+			else if (month == "June" || month == "September")
+			{
 
-            if (days < 7 && month == "May" || month == "October")
-            {
-                priceStudio = priceStudio - priceStudio * 0.05;
-            }
-            else if (days > 14 && month == "May" || month == "October")
-            {
-                priceStudio = priceStudio - priceStudio * 0.30;
-            }
-            else if (days > 14 && month == "June" || month == "September")
-            {
-                priceStudio = priceStudio - priceStudio * 0.20;
-            }
-             if (days > 14)
-            {
-                priceFlat = priceFlat - priceFlat * 0.10;
-            }
-            Console.WriteLine($"Apartment: {priceFlat:f2} lv.");
-            Console.WriteLine($"Studio: {priceStudio:f2} lv.");
+				if (days > 14)
+				{
+					priceStudio = days * 75.20 * 0.80;
+					priceFlat = days * 68.70 * 0.90;
+				}
+				else
+				{
+					priceStudio = days * 75.20;
+					priceFlat = days * 68.70;
+				}
+			}
+			else if (month == "July" || month == "August")
+			{
+				priceStudio = days * 76.0;
+				if (days > 14)
+				{
+					priceFlat = days * 77.0 * 0.90;
+				}
+				else
+				{
+					priceFlat = days * 77.0;
+				}
+			}
 
-        }
-    }
+
+			Console.WriteLine($"Apartment: {priceFlat:f2} lv.");
+			Console.WriteLine($"Studio: {priceStudio:f2} lv.");
+
+		}
+	}
 }
