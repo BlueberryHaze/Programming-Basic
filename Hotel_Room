@@ -1,65 +1,80 @@
 using System;
 
-namespace Hotel_Room
+namespace Operations_Between_Numbers
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			string month = Console.ReadLine();
-			double days = double.Parse(Console.ReadLine());
+			double number1 = double.Parse(Console.ReadLine());
+			double number2 = double.Parse(Console.ReadLine());
+			char symbol = char.Parse(Console.ReadLine());
+			double sum = 0.00;
 
-			double priceStudio = 0.00;
-			double priceFlat = 0.00;
-
-			if (month == "May" || month == "October")
+			if (symbol == '+')
 			{
-				if (days > 7 && days <= 14)
+				sum = number1 + number2;
+				if (sum % 2 == 1)
 				{
-					priceStudio = days * 50.0 * 0.95;
-					priceFlat = days * 65.0;
-				}
-				else if (days > 14)
-				{
-					priceStudio = days * 50.0 * 0.70;
-					priceFlat = days * 65.0 * 0.90;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - odd");
 				}
 				else
 				{
-					priceStudio = days * 50.0;
-					priceFlat = days * 65.0;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - even");
 				}
 			}
-			else if (month == "June" || month == "September")
-			{
 
-				if (days > 14)
+			else if (symbol == '-')
+			{
+				sum = number1 - number2;
+				if (sum % 2 == 0)
 				{
-					priceStudio = days * 75.20 * 0.80;
-					priceFlat = days * 68.70 * 0.90;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - even");
 				}
 				else
 				{
-					priceStudio = days * 75.20;
-					priceFlat = days * 68.70;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - odd");
 				}
 			}
-			else if (month == "July" || month == "August")
+
+			else if (symbol == '*')
 			{
-				priceStudio = days * 76.0;
-				if (days > 14)
+				sum = number1 * number2;
+				if (sum % 2 == 1)
 				{
-					priceFlat = days * 77.0 * 0.90;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - odd");
 				}
 				else
 				{
-					priceFlat = days * 77.0;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum} - even");
 				}
 			}
 
+			else if (symbol == '/')
+			{
+				if (number2 != 0)
+				{
+					sum = number1 / number2;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum:f2}");
+				}
+				else
+				{
+					Console.WriteLine($"Cannot divide {number1} by zero");
+				}
+			}
 
-			Console.WriteLine($"Apartment: {priceFlat:f2} lv.");
-			Console.WriteLine($"Studio: {priceStudio:f2} lv.");
+			else if (symbol == '%')
+			{
+				if (number2 != 0)
+				{
+					sum = number1 % number2;
+					Console.WriteLine($"{number1} {symbol} {number2} = {sum}");
+				}
+				else
+				{
+					Console.WriteLine($"Cannot divide {number1} by zero");
+				}
+			}
 
 		}
 	}
