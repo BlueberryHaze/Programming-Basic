@@ -1,0 +1,49 @@
+using System;
+
+namespace Group_Stage
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string team = Console.ReadLine();
+			int playedGame = int.Parse(Console.ReadLine());
+			int point = 0;
+			int goals = 0;
+			int missGoals = 0;
+			int diff = 0;
+
+			for (int i = 1; i <= playedGame; i++)
+			{
+				int score = int.Parse(Console.ReadLine());
+				int miss = int.Parse(Console.ReadLine());
+				goals += score;
+				missGoals += miss;
+        
+				if (score > miss)
+				{
+					point += 3;
+				}
+				else if (score == miss)
+				{
+					point++;
+				}
+			}
+      
+			diff = goals - missGoals;
+			if (goals >= missGoals)
+			{
+				
+				Console.WriteLine($"{team} has finished the group phase with {point} points.");
+				Console.WriteLine($"Goal difference: {diff}.");
+			}
+			else
+			{
+				
+				Console.WriteLine($"{team} has been eliminated from the group phase.");
+				Console.WriteLine($"Goal difference: {diff}.");
+			}
+
+		}
+	}
+}
