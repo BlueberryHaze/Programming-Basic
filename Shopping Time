@@ -1,0 +1,24 @@
+using System;
+
+namespace Shopping_Time 
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int breaks = int.Parse(Console.ReadLine());
+			double oneParts = double.Parse(Console.ReadLine());
+			double oneProgram = double.Parse(Console.ReadLine());
+			double coffee = double.Parse(Console.ReadLine());
+
+			int timeForParts = 6;
+			int timeForProgram = 4;
+
+			int timeForRelax = (breaks - 5) - (timeForParts + timeForProgram);
+			double spendMoney = 3 * oneParts + 2 * oneProgram + coffee;
+
+			Console.WriteLine($"{spendMoney:f2}");
+			Console.WriteLine($"{timeForRelax}");
+		}
+	}
+}
