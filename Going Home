@@ -1,0 +1,29 @@
+using System;
+
+namespace Going_Home
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double KM = double.Parse(Console.ReadLine());
+			double gas = double.Parse(Console.ReadLine());
+			double moneyGas = double.Parse(Console.ReadLine());
+			double winMoney = double.Parse(Console.ReadLine());
+
+			double gasForCar = (KM * gas) / 100;
+			double moneyForGas = gasForCar * moneyGas;
+			double total = Math.Abs(moneyForGas - winMoney);
+
+			if (winMoney >= moneyForGas)
+			{				
+				Console.WriteLine($"You can go home. {total:f2} money left.");
+			}
+			else
+			{				
+				winMoney /= 5;
+				Console.WriteLine($"Sorry, you cannot go home. Each will receive {winMoney:f2} money.");
+			}
+		}
+	}
+}
