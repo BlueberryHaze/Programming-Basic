@@ -1,0 +1,41 @@
+using System;
+ 
+namespace High_Jump
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int aimJump = int.Parse(Console.ReadLine());
+            int currentJump = aimJump - 30;
+            int faults = 0;
+            int counter = 0;
+ 
+            while (currentJump <= aimJump)
+            {
+                int jumpTry = int.Parse(Console.ReadLine());
+                counter++;
+                if (jumpTry > currentJump)
+                {
+                    currentJump += 5;
+                    faults = 0;
+                }
+                else
+                {
+                    faults++;
+                }
+ 
+                if (faults == 3)
+                {
+                    Console.WriteLine($"Tihomir failed at {currentJump}cm after {counter} jumps.");
+                    break;
+                }
+                if (currentJump > aimJump)
+                {
+                    Console.WriteLine($"Tihomir succeeded, he jumped over {currentJump - 5}cm after {counter} jumps.");
+                    break;
+                }
+            }
+        }
+    }
+}
