@@ -1,0 +1,44 @@
+using System;
+
+namespace Tennis_Ranklist
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int tournir = int.Parse(Console.ReadLine());
+			int startPoint = int.Parse(Console.ReadLine());
+			int pointCounter = 0;
+			double winCounter = 0;
+
+			for (int i = 1; i <= tournir; i++)
+			{
+				string finish = Console.ReadLine();
+
+				if (finish == "W")
+				{
+					pointCounter += 2000;
+					winCounter++;
+				}
+				else if (finish == "F")
+				{
+					pointCounter += 1200;
+				}
+				else if(finish=="SF")
+				{
+					pointCounter += 720;
+				}
+
+			}
+			double finalPoint = startPoint + pointCounter;
+			double average = pointCounter / tournir;
+			double procent = (winCounter / tournir) * 100;
+
+			Console.WriteLine($"Final points: {finalPoint}");
+			Console.WriteLine($"Average points: {average}");
+			Console.WriteLine($"{procent:f2}%");
+
+
+		}
+	}
+}
