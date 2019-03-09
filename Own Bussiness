@@ -1,0 +1,41 @@
+using System;
+
+namespace Own_Bussiness
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int widthSpace = int.Parse(Console.ReadLine());
+			int lenghSpace = int.Parse(Console.ReadLine());
+			int highSpace = int.Parse(Console.ReadLine());
+			string command = Console.ReadLine();
+
+			int spearSpace = 0;
+
+			int space = widthSpace * lenghSpace * highSpace;
+
+			while (command != "Done")
+			{
+				int inbount = int.Parse(command);
+				spearSpace += inbount;
+
+				if (spearSpace >= space)
+				{
+					int left = spearSpace - space;
+					Console.WriteLine($"No more free space! You need {left} Cubic meters more.");
+					break;
+				}
+				command = Console.ReadLine();
+			}
+			if(command == "Done")
+			{
+				if (space > spearSpace)
+				{
+					Console.WriteLine($"{space-spearSpace} Cubic meters left.");
+				}
+			}
+
+		}
+	}
+}
