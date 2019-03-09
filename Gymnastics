@@ -1,0 +1,84 @@
+using System;
+
+namespace Gymnastics
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string country = Console.ReadLine();
+			string device = Console.ReadLine();
+			double hard = 0;
+			double doing = 0;
+
+						
+			switch (country)
+			{
+				case "Russia":
+					switch (device)
+					{
+						case "ribbon":
+							hard = 9.100;
+							doing = 9.400;
+							break;
+						case "hoop":
+							hard = 9.300;
+							doing = 9.800;
+							break;
+						case "rope":
+							hard = 9.600;
+							doing = 9.000;
+							break;
+
+					}
+					break;
+
+				case "Bulgaria":
+					switch (device)
+					{
+						case "ribbon":
+							hard = 9.600;
+							doing = 9.400;
+							break;
+						case "hoop":
+							hard = 9.550;
+							doing = 9.750;
+							break;
+						case "rope":
+							hard = 9.500;
+							doing = 9.400;
+							break;
+
+					}
+					break;
+
+				case "Italy":
+					switch (device)
+					{
+						case "ribbon":
+							hard = 9.200;
+							doing = 9.500;
+							break;
+						case "hoop":
+							hard = 9.450;
+							doing = 9.350;
+							break;
+						case "rope":
+							hard = 9.700;
+							doing = 9.150;
+							break;
+
+					}
+					break;
+			}
+
+			double price = hard + doing;
+			double left = 20 - price;
+			double procent =((left / 20) * 100);
+
+			Console.WriteLine($"The team of {country} get {price:f3} on {device}.");
+			Console.WriteLine($"{procent:f2}%");
+
+		}
+	}
+}
