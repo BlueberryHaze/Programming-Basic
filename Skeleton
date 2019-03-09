@@ -1,0 +1,32 @@
+using System;
+
+namespace Skeleton
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			double minCon = double.Parse(Console.ReadLine());
+			double secCon = double.Parse(Console.ReadLine());
+			double lenght = double.Parse(Console.ReadLine());
+			double secFor100 = double.Parse(Console.ReadLine());
+
+			double controlSec = minCon * 60 + secCon;
+			double time = lenght / 120;
+			double minus = time * 2.5;
+			double total = (lenght / 100) * secFor100 - minus;
+
+			if (controlSec>= total)
+			{
+				Console.WriteLine("Marin Bangiev won an Olympic quota!");
+				Console.WriteLine($"His time is {total:f3}.");
+			}
+			else
+			{
+				double left = total - controlSec;
+				Console.WriteLine($"No, Marin failed! He was {left:f3} second slower.");
+			}
+
+		}
+	}
+}
