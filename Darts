@@ -1,0 +1,70 @@
+using System;
+
+namespace Darts
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string name = Console.ReadLine();
+			string command = Console.ReadLine();
+			int startSore = 301;
+			int counter = 0;
+			int uncounter = 0;
+
+
+			while (command != "Retire")
+			{
+				
+				string couantity = command;
+				int score = int.Parse(Console.ReadLine());
+
+				if (couantity == "Double")
+				{
+					score *= 2;
+				}
+				if (couantity == "Triple")
+				{
+					score *= 3;
+				}
+
+				if (startSore < score)
+				{
+					uncounter++;
+					command = Console.ReadLine();
+					continue;
+				}
+				else
+				{
+					startSore -= score;
+					counter++;
+
+				}
+				if (startSore == 0)
+				{
+					Console.WriteLine($"{name} won the leg with {counter} shots.");
+					break;
+				}
+				
+				command = Console.ReadLine();
+
+			}
+			
+			if (command == "Retire")
+			{
+				if (startSore > 0)
+				{
+					Console.WriteLine($"{name} retired after {uncounter} unsuccessful shots.");
+				}
+				else
+				{
+					Console.WriteLine($"{name} won the leg with {counter} shots.");
+				}
+			}
+
+
+
+
+		}
+	}
+}
