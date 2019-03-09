@@ -1,0 +1,53 @@
+using System;
+
+namespace Computer_Room
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string mounth = Console.ReadLine();
+			int spendHour = int.Parse(Console.ReadLine());
+			int people = int.Parse(Console.ReadLine());
+			string halfDay = Console.ReadLine();
+
+			double price = 0;
+
+			if (mounth == "march" || mounth == "april" || mounth == "may")
+			{
+				if (halfDay == "day")
+				{
+					price = 10.50;
+				}
+				if (halfDay == "night")
+				{
+					price = 8.40;
+				}
+			}
+			else if (mounth == "june" || mounth == "july" || mounth == "august")
+			{
+				if (halfDay == "day")
+				{
+					price = 12.60;
+				}
+				if (halfDay == "night")
+				{
+					price = 10.20;
+				}
+			}
+
+			if (people >= 4)
+			{
+				price = price - (price * 0.1);
+			}
+			if (spendHour >= 5)
+			{
+				price = price - (price * 0.5);
+			}
+
+			Console.WriteLine($"Price per person for one hour: {price:f2}");
+			double totalCost = (price * people) * spendHour;
+			Console.WriteLine($"Total cost of the visit: {totalCost:f2}");
+		}
+	}
+}
